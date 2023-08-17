@@ -9,3 +9,17 @@ C:\Users\Henry354\source\repos\PoncheMaster\obj\Debug\PoncheMaster.csproj.CoreCo
 C:\Users\Henry354\source\repos\PoncheMaster\obj\Debug\PoncheMaster.exe
 C:\Users\Henry354\source\repos\PoncheMaster\obj\Debug\PoncheMaster.pdb
 C:\Users\Henry354\source\repos\PoncheMaster\obj\Debug\PoncheMaster.FormLogin.resources
+C:\Coding\ProyectoPonche\PoncheMasterRepos\PoncheMaster\bin\Debug\PoncheMaster.exe.config
+C:\Coding\ProyectoPonche\PoncheMasterRepos\PoncheMaster\bin\Debug\PoncheMaster.exe
+C:\Coding\ProyectoPonche\PoncheMasterRepos\PoncheMaster\bin\Debug\PoncheMaster.pdb
+C:\Coding\ProyectoPonche\PoncheMasterRepos\PoncheMaster\obj\Debug\PoncheMaster.csproj.AssemblyReference.cache
+C:\Coding\ProyectoPonche\PoncheMasterRepos\PoncheMaster\obj\Debug\PoncheMaster.csproj.SuggestedBindingRedirects.cache
+C:\Coding\ProyectoPonche\PoncheMasterRepos\PoncheMaster\obj\Debug\PoncheMaster.FormLogin.resources
+C:\Coding\ProyectoPonche\PoncheMasterRepos\PoncheMaster\obj\Debug\PoncheMaster.FormAdmins.resources
+C:\Coding\ProyectoPonche\PoncheMasterRepos\PoncheMaster\obj\Debug\PoncheMaster.FormHelp.resources
+C:\Coding\ProyectoPonche\PoncheMasterRepos\PoncheMaster\obj\Debug\PoncheMaster.FormPonche.resources
+C:\Coding\ProyectoPonche\PoncheMasterRepos\PoncheMaster\obj\Debug\PoncheMaster.Properties.Resources.resources
+C:\Coding\ProyectoPonche\PoncheMasterRepos\PoncheMaster\obj\Debug\PoncheMaster.csproj.GenerateResource.cache
+C:\Coding\ProyectoPonche\PoncheMasterRepos\PoncheMaster\obj\Debug\PoncheMaster.csproj.CoreCompileInputs.cache
+C:\Coding\ProyectoPonche\PoncheMasterRepos\PoncheMaster\obj\Debug\PoncheMaster.exe
+C:\Coding\ProyectoPonche\PoncheMasterRepos\PoncheMaster\obj\Debug\PoncheMaster.pdb
