@@ -31,14 +31,14 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label iDUserLabel;
             this.iDUserComboBox = new System.Windows.Forms.ComboBox();
-            this.buttonCancel = new System.Windows.Forms.Button();
-            this.ButtonCrear = new System.Windows.Forms.Button();
-            this.poncheMasterDataSet = new PoncheMaster.PoncheMasterDataSet();
             this.userTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.poncheMasterDataSet = new PoncheMaster.PoncheMasterDataSet();
+            this.buttonCancel = new System.Windows.Forms.Button();
+            this.ButtonEliminar = new System.Windows.Forms.Button();
             this.userTableTableAdapter = new PoncheMaster.PoncheMasterDataSetTableAdapters.UserTableTableAdapter();
             iDUserLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.poncheMasterDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userTableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poncheMasterDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // iDUserLabel
@@ -63,6 +63,16 @@
             this.iDUserComboBox.TabIndex = 29;
             this.iDUserComboBox.ValueMember = "IDUser";
             // 
+            // userTableBindingSource
+            // 
+            this.userTableBindingSource.DataMember = "UserTable";
+            this.userTableBindingSource.DataSource = this.poncheMasterDataSet;
+            // 
+            // poncheMasterDataSet
+            // 
+            this.poncheMasterDataSet.DataSetName = "PoncheMasterDataSet";
+            this.poncheMasterDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // buttonCancel
             // 
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -73,26 +83,18 @@
             this.buttonCancel.TabIndex = 26;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // ButtonCrear
+            // ButtonEliminar
             // 
-            this.ButtonCrear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ButtonCrear.Location = new System.Drawing.Point(37, 75);
-            this.ButtonCrear.Name = "ButtonCrear";
-            this.ButtonCrear.Size = new System.Drawing.Size(115, 29);
-            this.ButtonCrear.TabIndex = 27;
-            this.ButtonCrear.Text = "Create";
-            this.ButtonCrear.UseVisualStyleBackColor = true;
-            // 
-            // poncheMasterDataSet
-            // 
-            this.poncheMasterDataSet.DataSetName = "PoncheMasterDataSet";
-            this.poncheMasterDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // userTableBindingSource
-            // 
-            this.userTableBindingSource.DataMember = "UserTable";
-            this.userTableBindingSource.DataSource = this.poncheMasterDataSet;
+            this.ButtonEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.ButtonEliminar.Location = new System.Drawing.Point(37, 75);
+            this.ButtonEliminar.Name = "ButtonEliminar";
+            this.ButtonEliminar.Size = new System.Drawing.Size(115, 29);
+            this.ButtonEliminar.TabIndex = 27;
+            this.ButtonEliminar.Text = "Delete";
+            this.ButtonEliminar.UseVisualStyleBackColor = true;
+            this.ButtonEliminar.Click += new System.EventHandler(this.ButtonCrear_Click);
             // 
             // userTableTableAdapter
             // 
@@ -100,18 +102,20 @@
             // 
             // FormDeleteUs
             // 
+            this.AcceptButton = this.ButtonEliminar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(350, 140);
             this.Controls.Add(iDUserLabel);
             this.Controls.Add(this.iDUserComboBox);
             this.Controls.Add(this.buttonCancel);
-            this.Controls.Add(this.ButtonCrear);
+            this.Controls.Add(this.ButtonEliminar);
             this.Name = "FormDeleteUs";
             this.Text = "FormDeleteUs";
             this.Load += new System.EventHandler(this.FormDeleteUs_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.poncheMasterDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userTableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poncheMasterDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,7 +125,7 @@
 
         private System.Windows.Forms.ComboBox iDUserComboBox;
         private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.Button ButtonCrear;
+        private System.Windows.Forms.Button ButtonEliminar;
         private PoncheMasterDataSet poncheMasterDataSet;
         private System.Windows.Forms.BindingSource userTableBindingSource;
         private PoncheMasterDataSetTableAdapters.UserTableTableAdapter userTableTableAdapter;

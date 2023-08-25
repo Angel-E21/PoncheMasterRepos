@@ -19,3 +19,6 @@ C:\Users\Henry354\source\repos\PoncheMaster\obj\Debug\PoncheMaster.FormReadPonch
 C:\Users\Henry354\source\repos\PoncheMaster\obj\Debug\PoncheMaster.FormUpdateEm.resources
 C:\Users\Henry354\source\repos\PoncheMaster\obj\Debug\PoncheMaster.FormModalReadEm.resources
 C:\Users\Henry354\source\repos\PoncheMaster\obj\Debug\PoncheMaster.FormModalReadPo.resources
+C:\Users\Henry354\source\repos\PoncheMaster\obj\Debug\PoncheMaster.FormCreateUs.resources
+C:\Users\Henry354\source\repos\PoncheMaster\obj\Debug\PoncheMaster.FormDeleteUs.resources
+C:\Users\Henry354\source\repos\PoncheMaster\obj\Debug\PoncheMaster.FormUpdateUs.resources

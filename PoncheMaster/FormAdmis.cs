@@ -21,7 +21,7 @@ namespace PoncheMaster
         {
             FormCreateEm createEm = new FormCreateEm();
             createEm.MdiParent =this;
-            createEm.ShowDialog();
+            createEm.Show();
 
         }
 
@@ -29,33 +29,56 @@ namespace PoncheMaster
         {
             FormReadEm readEm = new FormReadEm();
             readEm.MdiParent =this;
-            readEm.ShowDialog();
+            readEm.Show();
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
            FormUpdateEm UpdateEm = new FormUpdateEm();
             UpdateEm.MdiParent =this;
-            UpdateEm.ShowDialog();
+            UpdateEm.Show();
         }
 
         private void deleteToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             FormDeleteEm deleteEm = new FormDeleteEm();
             deleteEm.MdiParent = this;
-            deleteEm.ShowDialog();
+            deleteEm.Show();
         }
 
         private void readToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             FormReadPonche readPo = new FormReadPonche();
             readPo.MdiParent = this;
-            readPo.ShowDialog();
+            readPo.Show();
         }
 
         private void logoutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            FormLogin formLogin = new FormLogin();
+            formLogin.Show();
             this.Close();
+        }
+
+        private void createToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormCreateUs createUs = new FormCreateUs();
+            createUs.MdiParent =this;
+            createUs.Show();
+        }
+
+        private void updateToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormUpdateUs updateUs = new FormUpdateUs();
+            updateUs.MdiParent =this;
+            updateUs.Show();
+        }
+
+        private void deleteToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            FormDeleteUs deleteUs = new FormDeleteUs();
+            deleteUs.MdiParent = this;
+            deleteUs.Show();
         }
     }
 }

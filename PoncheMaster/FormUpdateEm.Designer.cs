@@ -30,8 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.comboBoxPosicion = new System.Windows.Forms.ComboBox();
+            this.employeePositionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.poncheMasterDataSet = new PoncheMaster.PoncheMasterDataSet();
             this.comboBoxDepartamento = new System.Windows.Forms.ComboBox();
+            this.departamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBoxUsusario = new System.Windows.Forms.ComboBox();
+            this.userTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dateTimePickerFechaNac = new System.Windows.Forms.DateTimePicker();
             this.labelPosicion = new System.Windows.Forms.Label();
             this.labelDepartamento = new System.Windows.Forms.Label();
@@ -53,17 +57,17 @@
             this.labelEmployeeID = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.comboBoxEmployeeID = new System.Windows.Forms.ComboBox();
-            this.buttonCancel = new System.Windows.Forms.Button();
-            this.ButtonActualizar = new System.Windows.Forms.Button();
-            this.poncheMasterDataSet = new PoncheMaster.PoncheMasterDataSet();
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ButtonActualizar = new System.Windows.Forms.Button();
             this.employeeTableAdapter = new PoncheMaster.PoncheMasterDataSetTableAdapters.EmployeeTableAdapter();
-            this.userTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userTableTableAdapter = new PoncheMaster.PoncheMasterDataSetTableAdapters.UserTableTableAdapter();
-            this.departamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.departamentoTableAdapter = new PoncheMaster.PoncheMasterDataSetTableAdapters.DepartamentoTableAdapter();
-            this.employeePositionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.employeePositionTableAdapter = new PoncheMaster.PoncheMasterDataSetTableAdapters.EmployeePositionTableAdapter();
+            this.buttonCancel = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.employeePositionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poncheMasterDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departamentoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -72,11 +76,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCedula)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poncheMasterDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userTableBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departamentoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeePositionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBoxPosicion
@@ -91,6 +91,16 @@
             this.comboBoxPosicion.TabIndex = 35;
             this.comboBoxPosicion.ValueMember = "IDPosition";
             // 
+            // employeePositionBindingSource
+            // 
+            this.employeePositionBindingSource.DataMember = "EmployeePosition";
+            this.employeePositionBindingSource.DataSource = this.poncheMasterDataSet;
+            // 
+            // poncheMasterDataSet
+            // 
+            this.poncheMasterDataSet.DataSetName = "PoncheMasterDataSet";
+            this.poncheMasterDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // comboBoxDepartamento
             // 
             this.comboBoxDepartamento.DataSource = this.departamentoBindingSource;
@@ -103,6 +113,11 @@
             this.comboBoxDepartamento.TabIndex = 34;
             this.comboBoxDepartamento.ValueMember = "IDDept";
             // 
+            // departamentoBindingSource
+            // 
+            this.departamentoBindingSource.DataMember = "Departamento";
+            this.departamentoBindingSource.DataSource = this.poncheMasterDataSet;
+            // 
             // comboBoxUsusario
             // 
             this.comboBoxUsusario.DataSource = this.userTableBindingSource;
@@ -114,6 +129,11 @@
             this.comboBoxUsusario.Size = new System.Drawing.Size(229, 28);
             this.comboBoxUsusario.TabIndex = 33;
             this.comboBoxUsusario.ValueMember = "IDUser";
+            // 
+            // userTableBindingSource
+            // 
+            this.userTableBindingSource.DataMember = "UserTable";
+            this.userTableBindingSource.DataSource = this.poncheMasterDataSet;
             // 
             // dateTimePickerFechaNac
             // 
@@ -319,16 +339,10 @@
             this.comboBoxEmployeeID.TabIndex = 35;
             this.comboBoxEmployeeID.ValueMember = "IDEmployee";
             // 
-            // buttonCancel
+            // employeeBindingSource
             // 
-            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.buttonCancel.Location = new System.Drawing.Point(292, 295);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(115, 29);
-            this.buttonCancel.TabIndex = 36;
-            this.buttonCancel.Text = "Cancel";
-            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.employeeBindingSource.DataMember = "Employee";
+            this.employeeBindingSource.DataSource = this.poncheMasterDataSet;
             // 
             // ButtonActualizar
             // 
@@ -339,52 +353,42 @@
             this.ButtonActualizar.TabIndex = 37;
             this.ButtonActualizar.Text = "Update";
             this.ButtonActualizar.UseVisualStyleBackColor = true;
-            // 
-            // poncheMasterDataSet
-            // 
-            this.poncheMasterDataSet.DataSetName = "PoncheMasterDataSet";
-            this.poncheMasterDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // employeeBindingSource
-            // 
-            this.employeeBindingSource.DataMember = "Employee";
-            this.employeeBindingSource.DataSource = this.poncheMasterDataSet;
+            this.ButtonActualizar.Click += new System.EventHandler(this.ButtonActualizar_Click);
             // 
             // employeeTableAdapter
             // 
             this.employeeTableAdapter.ClearBeforeFill = true;
             // 
-            // userTableBindingSource
-            // 
-            this.userTableBindingSource.DataMember = "UserTable";
-            this.userTableBindingSource.DataSource = this.poncheMasterDataSet;
-            // 
             // userTableTableAdapter
             // 
             this.userTableTableAdapter.ClearBeforeFill = true;
-            // 
-            // departamentoBindingSource
-            // 
-            this.departamentoBindingSource.DataMember = "Departamento";
-            this.departamentoBindingSource.DataSource = this.poncheMasterDataSet;
             // 
             // departamentoTableAdapter
             // 
             this.departamentoTableAdapter.ClearBeforeFill = true;
             // 
-            // employeePositionBindingSource
-            // 
-            this.employeePositionBindingSource.DataMember = "EmployeePosition";
-            this.employeePositionBindingSource.DataSource = this.poncheMasterDataSet;
-            // 
             // employeePositionTableAdapter
             // 
             this.employeePositionTableAdapter.ClearBeforeFill = true;
             // 
+            // buttonCancel
+            // 
+            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancel.Location = new System.Drawing.Point(286, 295);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(105, 29);
+            this.buttonCancel.TabIndex = 38;
+            this.buttonCancel.Text = "Cancel";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            // 
             // FormUpdateEm
             // 
+            this.AcceptButton = this.ButtonActualizar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(419, 336);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.ButtonActualizar);
@@ -417,6 +421,10 @@
             this.Name = "FormUpdateEm";
             this.Text = "Update Employee";
             this.Load += new System.EventHandler(this.FormUpdateEm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.employeePositionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poncheMasterDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departamentoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userTableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -425,11 +433,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCedula)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poncheMasterDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userTableBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departamentoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeePositionBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -461,7 +465,6 @@
         private System.Windows.Forms.Label labelEmployeeID;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.ComboBox comboBoxEmployeeID;
-        private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button ButtonActualizar;
         private PoncheMasterDataSet poncheMasterDataSet;
         private System.Windows.Forms.BindingSource employeeBindingSource;
@@ -472,5 +475,6 @@
         private PoncheMasterDataSetTableAdapters.DepartamentoTableAdapter departamentoTableAdapter;
         private System.Windows.Forms.BindingSource employeePositionBindingSource;
         private PoncheMasterDataSetTableAdapters.EmployeePositionTableAdapter employeePositionTableAdapter;
+        private System.Windows.Forms.Button buttonCancel;
     }
 }

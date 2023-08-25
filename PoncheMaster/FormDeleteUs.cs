@@ -12,6 +12,7 @@ namespace PoncheMaster
 {
     public partial class FormDeleteUs : Form
     {
+        Datos D = new Datos();
         public FormDeleteUs()
         {
             InitializeComponent();
@@ -19,8 +20,33 @@ namespace PoncheMaster
 
         private void FormDeleteUs_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'poncheMasterDataSet.UserTable' Puede moverla o quitarla según sea necesario.
-            this.userTableTableAdapter.Fill(this.poncheMasterDataSet.UserTable);
+           this.userTableTableAdapter.Fill(this.poncheMasterDataSet.UserTable);
+
+        }
+
+        private void ButtonCrear_Click(object sender, EventArgs e)
+        {
+            bool isValid = true;
+            if (iDUserComboBox.SelectedIndex == -1)
+            {
+                isValid = false;
+            }
+            if (isValid)
+            {
+                MessageBox.Show("estas seguro?");
+                if (D.DeleteUser((int)iDUserComboBox.SelectedValue))
+                {
+                    MessageBox.Show("Usuario Eliminado Con exito");
+                }
+                else
+                {
+                    MessageBox.Show("Hubo un Error");
+                }
+            }
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
 
         }
     }

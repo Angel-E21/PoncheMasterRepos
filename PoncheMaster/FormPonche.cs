@@ -23,9 +23,9 @@ namespace PoncheMaster
         {
             bool isValid = true;
 
-            if (D.AuthCedula(textBoxCedula.Text))
+            if (!String.IsNullOrEmpty(textBoxCedula.Text))
             {
-
+               
                 if (D.Ponche(textBoxCedula.Text))
                 {
                     isValid = true;
@@ -50,6 +50,13 @@ namespace PoncheMaster
             {
                 MessageBox.Show("Algo salio Mal", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FormLogin formLogin = new FormLogin();
+            formLogin.Show();
         }
     }
 }

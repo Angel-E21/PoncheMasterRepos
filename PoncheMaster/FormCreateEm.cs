@@ -64,10 +64,21 @@ namespace PoncheMaster
             }
             if (isValid)
             {
-                D.insertuser(textBoxName.Text, textBoxApellido.Text, textBoxCedula.Text, dateTimePickerFechaNac.Value, (int)comboBoxUsusario.SelectedValue, (int)comboBoxDepartamento.SelectedValue, (int)comboBoxPosicion.SelectedValue);
-            //no revisado
+               if( D.insertEmployee(textBoxName.Text, textBoxApellido.Text, textBoxCedula.Text, dateTimePickerFechaNac.Value, (int)comboBoxUsusario.SelectedValue, (int)comboBoxDepartamento.SelectedValue, (int)comboBoxPosicion.SelectedValue))
+               {
+                    MessageBox.Show("Empleado Agregado Exitosamente");
+               }
+                else
+                {
+                    MessageBox.Show("Hubo un error");
+                }
             }
 
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

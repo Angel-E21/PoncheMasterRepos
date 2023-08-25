@@ -12,6 +12,7 @@ namespace PoncheMaster
 {
     public partial class FormCreateUs : Form
     {
+        Datos D = new Datos();
         public FormCreateUs()
         {
             InitializeComponent();
@@ -27,10 +28,37 @@ namespace PoncheMaster
 
         private void FormCreateUs_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'poncheMasterDataSet.UserType' Puede moverla o quitarla según sea necesario.
-            this.userTypeTableAdapter.Fill(this.poncheMasterDataSet.UserType);
-            // TODO: esta línea de código carga datos en la tabla 'poncheMasterDataSet.UserTable' Puede moverla o quitarla según sea necesario.
-            this.userTableTableAdapter.Fill(this.poncheMasterDataSet.UserTable);
+           this.userTypeTableAdapter.Fill(this.poncheMasterDataSet.UserType);
+           this.userTableTableAdapter.Fill(this.poncheMasterDataSet.UserTable);
+
+        }
+
+        private void ButtonCrear_Click(object sender, EventArgs e)
+        {
+            bool isValid =true;
+            if (String.IsNullOrEmpty(usernameTextBox.Text))
+            {
+                isValid = false;
+            }
+            if (String.IsNullOrEmpty(userPasswordTextBox.Text))
+            {
+                isValid = false;
+            }
+            if (UsertypecomboBox.SelectedIndex==-1)
+            {
+                isValid = false;
+            }
+            if (isValid)
+            {
+               if(D.insertUser(usernameTextBox.Text, userPasswordTextBox.Text, (int)UsertypecomboBox.SelectedValue))
+                {
+                    MessageBox.Show("Ususario Agregado Exitosamente");
+                }
+                else
+                {
+                    MessageBox.Show("Hubo un error");
+                }
+            }
 
         }
     }

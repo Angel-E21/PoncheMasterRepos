@@ -36,13 +36,13 @@
             this.userTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userTableTableAdapter = new PoncheMaster.PoncheMasterDataSetTableAdapters.UserTableTableAdapter();
             this.tableAdapterManager = new PoncheMaster.PoncheMasterDataSetTableAdapters.TableAdapterManager();
+            this.userTypeTableAdapter = new PoncheMaster.PoncheMasterDataSetTableAdapters.UserTypeTableAdapter();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.userPasswordTextBox = new System.Windows.Forms.TextBox();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.ButtonCrear = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.UsertypecomboBox = new System.Windows.Forms.ComboBox();
             this.userTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.userTypeTableAdapter = new PoncheMaster.PoncheMasterDataSetTableAdapters.UserTypeTableAdapter();
             usernameLabel = new System.Windows.Forms.Label();
             userPasswordLabel = new System.Windows.Forms.Label();
             iDUserTypeLabel = new System.Windows.Forms.Label();
@@ -50,6 +50,36 @@
             ((System.ComponentModel.ISupportInitialize)(this.userTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userTypeBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // usernameLabel
+            // 
+            usernameLabel.AutoSize = true;
+            usernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            usernameLabel.Location = new System.Drawing.Point(12, 9);
+            usernameLabel.Name = "usernameLabel";
+            usernameLabel.Size = new System.Drawing.Size(87, 20);
+            usernameLabel.TabIndex = 3;
+            usernameLabel.Text = "Username:";
+            // 
+            // userPasswordLabel
+            // 
+            userPasswordLabel.AutoSize = true;
+            userPasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            userPasswordLabel.Location = new System.Drawing.Point(12, 41);
+            userPasswordLabel.Name = "userPasswordLabel";
+            userPasswordLabel.Size = new System.Drawing.Size(120, 20);
+            userPasswordLabel.TabIndex = 5;
+            userPasswordLabel.Text = "User Password:";
+            // 
+            // iDUserTypeLabel
+            // 
+            iDUserTypeLabel.AutoSize = true;
+            iDUserTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            iDUserTypeLabel.Location = new System.Drawing.Point(12, 73);
+            iDUserTypeLabel.Name = "iDUserTypeLabel";
+            iDUserTypeLabel.Size = new System.Drawing.Size(102, 20);
+            iDUserTypeLabel.TabIndex = 7;
+            iDUserTypeLabel.Text = "IDUser Type:";
             // 
             // poncheMasterDataSet
             // 
@@ -76,15 +106,9 @@
             this.tableAdapterManager.UserTableTableAdapter = this.userTableTableAdapter;
             this.tableAdapterManager.UserTypeTableAdapter = this.userTypeTableAdapter;
             // 
-            // usernameLabel
+            // userTypeTableAdapter
             // 
-            usernameLabel.AutoSize = true;
-            usernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            usernameLabel.Location = new System.Drawing.Point(12, 9);
-            usernameLabel.Name = "usernameLabel";
-            usernameLabel.Size = new System.Drawing.Size(87, 20);
-            usernameLabel.TabIndex = 3;
-            usernameLabel.Text = "Username:";
+            this.userTypeTableAdapter.ClearBeforeFill = true;
             // 
             // usernameTextBox
             // 
@@ -95,16 +119,6 @@
             this.usernameTextBox.Size = new System.Drawing.Size(143, 26);
             this.usernameTextBox.TabIndex = 4;
             // 
-            // userPasswordLabel
-            // 
-            userPasswordLabel.AutoSize = true;
-            userPasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            userPasswordLabel.Location = new System.Drawing.Point(12, 41);
-            userPasswordLabel.Name = "userPasswordLabel";
-            userPasswordLabel.Size = new System.Drawing.Size(120, 20);
-            userPasswordLabel.TabIndex = 5;
-            userPasswordLabel.Text = "User Password:";
-            // 
             // userPasswordTextBox
             // 
             this.userPasswordTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userTableBindingSource, "UserPassword", true));
@@ -113,16 +127,6 @@
             this.userPasswordTextBox.Name = "userPasswordTextBox";
             this.userPasswordTextBox.Size = new System.Drawing.Size(143, 26);
             this.userPasswordTextBox.TabIndex = 6;
-            // 
-            // iDUserTypeLabel
-            // 
-            iDUserTypeLabel.AutoSize = true;
-            iDUserTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            iDUserTypeLabel.Location = new System.Drawing.Point(12, 73);
-            iDUserTypeLabel.Name = "iDUserTypeLabel";
-            iDUserTypeLabel.Size = new System.Drawing.Size(102, 20);
-            iDUserTypeLabel.TabIndex = 7;
-            iDUserTypeLabel.Text = "IDUser Type:";
             // 
             // buttonCancel
             // 
@@ -144,27 +148,24 @@
             this.ButtonCrear.TabIndex = 14;
             this.ButtonCrear.Text = "Create";
             this.ButtonCrear.UseVisualStyleBackColor = true;
+            this.ButtonCrear.Click += new System.EventHandler(this.ButtonCrear_Click);
             // 
-            // comboBox1
+            // UsertypecomboBox
             // 
-            this.comboBox1.DataSource = this.userTypeBindingSource;
-            this.comboBox1.DisplayMember = "UserType";
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(141, 71);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(143, 28);
-            this.comboBox1.TabIndex = 15;
-            this.comboBox1.ValueMember = "IDUserType";
+            this.UsertypecomboBox.DataSource = this.userTypeBindingSource;
+            this.UsertypecomboBox.DisplayMember = "UserType";
+            this.UsertypecomboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsertypecomboBox.FormattingEnabled = true;
+            this.UsertypecomboBox.Location = new System.Drawing.Point(141, 71);
+            this.UsertypecomboBox.Name = "UsertypecomboBox";
+            this.UsertypecomboBox.Size = new System.Drawing.Size(143, 28);
+            this.UsertypecomboBox.TabIndex = 15;
+            this.UsertypecomboBox.ValueMember = "IDUserType";
             // 
             // userTypeBindingSource
             // 
             this.userTypeBindingSource.DataMember = "UserType";
             this.userTypeBindingSource.DataSource = this.poncheMasterDataSet;
-            // 
-            // userTypeTableAdapter
-            // 
-            this.userTypeTableAdapter.ClearBeforeFill = true;
             // 
             // FormCreateUs
             // 
@@ -173,7 +174,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(339, 166);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.UsertypecomboBox);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.ButtonCrear);
             this.Controls.Add(usernameLabel);
@@ -205,7 +206,7 @@
         private PoncheMasterDataSetTableAdapters.UserTypeTableAdapter userTypeTableAdapter;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button ButtonCrear;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox UsertypecomboBox;
         private System.Windows.Forms.BindingSource userTypeBindingSource;
     }
 }
