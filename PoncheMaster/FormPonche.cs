@@ -41,7 +41,6 @@ namespace PoncheMaster
 
                 isValid = false;
             }
-
             if (isValid)
             {
                 MessageBox.Show("ponche existoso");

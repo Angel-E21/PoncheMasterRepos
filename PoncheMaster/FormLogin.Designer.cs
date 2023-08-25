@@ -63,7 +63,7 @@ namespace PoncheMaster
             this.ButtonLogin.Location = new System.Drawing.Point(184, 276);
             this.ButtonLogin.Name = "ButtonLogin";
             this.ButtonLogin.Size = new System.Drawing.Size(115, 29);
-            this.ButtonLogin.TabIndex = 8;
+            this.ButtonLogin.TabIndex = 3;
             this.ButtonLogin.Text = "Log-In";
             this.ButtonLogin.UseVisualStyleBackColor = true;
             this.ButtonLogin.Click += new System.EventHandler(this.ButtonLogin_Click_1);
@@ -84,7 +84,7 @@ namespace PoncheMaster
             this.textBoxUserPassword.Location = new System.Drawing.Point(184, 189);
             this.textBoxUserPassword.Name = "textBoxUserPassword";
             this.textBoxUserPassword.Size = new System.Drawing.Size(152, 26);
-            this.textBoxUserPassword.TabIndex = 5;
+            this.textBoxUserPassword.TabIndex = 2;
             // 
             // textBoxUserName
             // 
@@ -92,7 +92,7 @@ namespace PoncheMaster
             this.textBoxUserName.Location = new System.Drawing.Point(184, 151);
             this.textBoxUserName.Name = "textBoxUserName";
             this.textBoxUserName.Size = new System.Drawing.Size(152, 26);
-            this.textBoxUserName.TabIndex = 9;
+            this.textBoxUserName.TabIndex = 1;
             // 
             // labelNotPassWord
             // 
@@ -139,6 +139,7 @@ namespace PoncheMaster
             // 
             // FormLogin
             // 
+            this.AcceptButton = this.ButtonLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 361);

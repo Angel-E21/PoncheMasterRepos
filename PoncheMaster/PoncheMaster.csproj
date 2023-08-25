@@ -48,6 +48,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatoSql.cs" />
+    <Compile Include="FormCreateUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCreateUs.Designer.cs">
+      <DependentUpon>FormCreateUs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDeleteUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDeleteUs.Designer.cs">
+      <DependentUpon>FormDeleteUs.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +126,12 @@
     <Compile Include="FormUpdateEm.Designer.cs">
       <DependentUpon>FormUpdateEm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormUpdateUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpdateUs.Designer.cs">
+      <DependentUpon>FormUpdateUs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Idatos.cs" />
     <Compile Include="PoncheMasterDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -122,6 +140,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormCreateUs.resx">
+      <DependentUpon>FormCreateUs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDeleteUs.resx">
+      <DependentUpon>FormDeleteUs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormUpdateEm.resx">
       <DependentUpon>FormUpdateEm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpdateUs.resx">
+      <DependentUpon>FormUpdateUs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

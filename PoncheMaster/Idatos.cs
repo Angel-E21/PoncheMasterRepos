@@ -13,6 +13,10 @@ namespace PoncheMaster
 
         bool IsAdmin(string username, int Type = 2);
 
+        bool Ponche(string cedula);
+
+        bool AuthCedula(string cedula);
+
 
     }
 }

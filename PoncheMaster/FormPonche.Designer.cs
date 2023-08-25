@@ -65,7 +65,7 @@
             this.textBoxCedula.Location = new System.Drawing.Point(174, 74);
             this.textBoxCedula.Name = "textBoxCedula";
             this.textBoxCedula.Size = new System.Drawing.Size(152, 26);
-            this.textBoxCedula.TabIndex = 4;
+            this.textBoxCedula.TabIndex = 1;
             // 
             // pictureBoxCedula
             // 
