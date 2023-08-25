@@ -31,7 +31,7 @@
     <Shape ID="DesignTable:SearchEmployeeByName" ZOrder="4" X="6276" Y="70" Height="248" Width="289" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="197" />
     <Shape ID="DesignTable:SearchEmployeeByPosition" ZOrder="3" X="6635" Y="70" Height="248" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="197" />
     <Shape ID="DesignTable:InOrOut" ZOrder="2" X="7005" Y="70" Height="96" Width="192" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="46" />
-    <Shape ID="DesignSources:QueriesTableAdapter" ZOrder="1" X="7267" Y="70" Height="48" Width="203" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="16" />
+    <Shape ID="DesignSources:QueriesTableAdapter" ZOrder="1" X="7267" Y="70" Height="162" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="44" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:FK_IDDept" ZOrder="11" LineWidth="11">

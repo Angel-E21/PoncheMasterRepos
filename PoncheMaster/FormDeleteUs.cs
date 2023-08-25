@@ -10,46 +10,44 @@ using System.Windows.Forms;
 
 namespace PoncheMaster
 {
-   
-    public partial class FormDeleteEm : Form
+    public partial class FormDeleteUs : Form
     {
         Datos D = new Datos();
-        public FormDeleteEm()
+        public FormDeleteUs()
         {
             InitializeComponent();
         }
 
-        private void FormDeleteEm_Load(object sender, EventArgs e)
+        private void FormDeleteUs_Load(object sender, EventArgs e)
         {
-             this.employeeTableAdapter.Fill(this.poncheMasterDataSet.Employee);
+           this.userTableTableAdapter.Fill(this.poncheMasterDataSet.UserTable);
 
         }
 
-        private void ButtonEliminar_Click(object sender, EventArgs e)
+        private void ButtonCrear_Click(object sender, EventArgs e)
         {
             bool isValid = true;
-            if (comboBoxEmployeeID.SelectedIndex == -1)
+            if (iDUserComboBox.SelectedIndex == -1)
             {
                 isValid = false;
             }
             if (isValid)
             {
                 MessageBox.Show("estas seguro?");
-                if (D.DeleteEmployee((int)comboBoxEmployeeID.SelectedValue))
+                if (D.DeleteUser((int)iDUserComboBox.SelectedValue))
                 {
-                    MessageBox.Show("Empleado Eliminado Con exito");
+                    MessageBox.Show("Usuario Eliminado Con exito");
                 }
                 else
                 {
                     MessageBox.Show("Hubo un Error");
                 }
             }
-
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+
         }
     }
 }

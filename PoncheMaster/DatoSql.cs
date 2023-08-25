@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Runtime.InteropServices.WindowsRuntime;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Xml.Linq;
 
 namespace PoncheMaster
 {
@@ -28,17 +29,20 @@ namespace PoncheMaster
                 object result = cmd.ExecuteScalar();
                 if (result == DBNull.Value)
                 {
+                    conn.Dispose();
                     return false;
                 }
                 else
                 {
+                    conn.Dispose();
                     return true;
                 }
             }
             catch (Exception e)
             {
-
-                throw new System.Exception(e.Message.ToString());
+             
+                return false;
+                throw new Exception(e.Message.ToString());
 
             }
            
@@ -59,19 +63,21 @@ namespace PoncheMaster
                 object result = cmd.ExecuteScalar();
                 if (result == null)
                 {
-                    return true;
                     conn.Dispose();
+                    return true;
+                   
                 }
                 else
                 {
-                    return false;
                     conn.Dispose();
+                    return false;
+                   
                 }
 
             }
             catch (Exception e)
             {
-
+                return false;
                 throw new Exception(e.Message.ToString());
 
             }
@@ -107,12 +113,13 @@ namespace PoncheMaster
                         }
                         catch (Exception e)
                         {
-
-                            throw new Exception(e.Message.ToString());
+                        conn.Dispose();
+                        return false;
+                        throw new Exception(e.Message.ToString());
                             
                         }
                         
-                        conn.Dispose();
+                        
                     }
                     else if ((int)cmd.ExecuteScalar() == 1)
                     {
@@ -130,24 +137,27 @@ namespace PoncheMaster
                         }
                         catch (Exception e)
                         {
-
-                            throw new Exception(e.Message.ToString());
+                        conn.Dispose();
+                        return false;
+                        throw new Exception(e.Message.ToString());
 
                         }
 
-                        conn.Dispose();
+                        
 
 
                     }
                     else if ((int)cmd.ExecuteScalar()>1)
                     {
-                        return false;
-                        conn.Dispose();
+                    conn.Dispose();
+                    return false;
+                        
                     }
                     else
                     {
-                        return false;
-                        conn.Dispose();
+                    conn.Dispose();
+                    return false;
+                        
                     }
 
 
@@ -202,5 +212,173 @@ namespace PoncheMaster
             return Isvalid;
         }
 
+        public bool insertEmployee(string Name, string Lastname, string cedula, DateTime birthdate, int userID, int deptID, int PositionID)
+        {
+            bool isValid = false;
+            try
+            {
+                string connection = ConfigurationManager.ConnectionStrings["PoncheMaster.Properties.Settings.PoncheMasterConnectionString"].ConnectionString;
+                SqlConnection conn = new SqlConnection(connection);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("InsertEmployee", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Name", Name);
+                cmd.Parameters.AddWithValue("@lastName", Lastname);
+                cmd.Parameters.AddWithValue("@cedula", cedula);
+                cmd.Parameters.AddWithValue("@birthdate", birthdate);
+                cmd.Parameters.AddWithValue("@user", userID);
+                cmd.Parameters.AddWithValue("@Dept", deptID);
+                cmd.Parameters.AddWithValue("@position", PositionID);
+                object result = cmd.ExecuteNonQuery();
+                isValid = true;
+                return isValid;
+
+            }
+            catch (Exception e)
+            {
+                isValid = false;
+                return isValid;
+                throw new Exception(e.Message.ToString());
+
+            }
+
+          
+        }
+
+        public bool insertUser(string username, string password, int usertype)
+        {
+            bool isValid = false;
+            try
+            {
+                string connection = ConfigurationManager.ConnectionStrings["PoncheMaster.Properties.Settings.PoncheMasterConnectionString"].ConnectionString;
+                SqlConnection conn = new SqlConnection(connection);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("InsertUser", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@UserName", username);
+                cmd.Parameters.AddWithValue("@Password", password);
+                cmd.Parameters.AddWithValue("@type", usertype);
+                object result = cmd.ExecuteNonQuery();
+                isValid = true;
+                return isValid;
+
+            }
+            catch (Exception e)
+            {
+                isValid = false;
+                return isValid;
+                throw new Exception(e.Message.ToString());
+
+            }
+        }
+        public bool UpdateEmployee(int ID, string Name, string Lastname, string cedula, DateTime birthdate, int userID, int deptID, int PositionID)
+        {
+            bool isValid = false;
+            try
+            {
+                string connection = ConfigurationManager.ConnectionStrings["PoncheMaster.Properties.Settings.PoncheMasterConnectionString"].ConnectionString;
+                SqlConnection conn = new SqlConnection(connection);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("UpdateEmployee", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ID", ID);
+                cmd.Parameters.AddWithValue("@Name", Name);
+                cmd.Parameters.AddWithValue("@lastName", Lastname);
+                cmd.Parameters.AddWithValue("@cedula", cedula);
+                cmd.Parameters.AddWithValue("@birthdate", birthdate);
+                cmd.Parameters.AddWithValue("@user", userID);
+                cmd.Parameters.AddWithValue("@Dept", deptID);
+                cmd.Parameters.AddWithValue("@position", PositionID);
+                object result = cmd.ExecuteNonQuery();
+                isValid = true;
+                return isValid;
+
+            }
+            catch (Exception e)
+            {
+                isValid = false;
+                return isValid;
+                throw new Exception(e.Message.ToString());
+
+            }
+
+        }
+        public bool UpdateUser(int ID, string username, string password, int usertype)
+        {
+            bool isValid = false;
+            try
+            {
+                string connection = ConfigurationManager.ConnectionStrings["PoncheMaster.Properties.Settings.PoncheMasterConnectionString"].ConnectionString;
+                SqlConnection conn = new SqlConnection(connection);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("UpdateUser", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", ID);
+                cmd.Parameters.AddWithValue("@UserName", username);
+                cmd.Parameters.AddWithValue("@UserName", username);
+                cmd.Parameters.AddWithValue("@Password", password);
+                cmd.Parameters.AddWithValue("@type", usertype);
+                object result = cmd.ExecuteNonQuery();
+                isValid = true;
+                return isValid;
+
+            }
+            catch (Exception e)
+            {
+                isValid = false;
+                return isValid;
+                throw new Exception(e.Message.ToString());
+
+            }
+        }
+
+        public bool DeleteUser(int ID)
+        {
+            bool isValid = false;
+            try
+            {
+                string connection = ConfigurationManager.ConnectionStrings["PoncheMaster.Properties.Settings.PoncheMasterConnectionString"].ConnectionString;
+                SqlConnection conn = new SqlConnection(connection);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("DeleteUser", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", ID);
+                object result = cmd.ExecuteNonQuery();
+                isValid = true;
+                return isValid;
+
+            }
+            catch (Exception e)
+            {
+                isValid = false;
+                return isValid;
+                throw new Exception(e.Message.ToString());
+
+            }
+        }
+        public bool DeleteEmployee(int ID)
+        {
+            bool isValid = false;
+            try
+            {
+                string connection = ConfigurationManager.ConnectionStrings["PoncheMaster.Properties.Settings.PoncheMasterConnectionString"].ConnectionString;
+                SqlConnection conn = new SqlConnection(connection);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("DeleteEmployee", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", ID);
+                object result = cmd.ExecuteNonQuery();
+                isValid = true;
+                return isValid;
+
+            }
+            catch (Exception e)
+            {
+                isValid = false;
+                return isValid;
+                throw new Exception(e.Message.ToString());
+
+            }
+        }
     }
 }

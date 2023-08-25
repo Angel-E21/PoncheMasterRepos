@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.ButtonCrear = new System.Windows.Forms.Button();
             this.LabelCedula = new System.Windows.Forms.Label();
@@ -39,11 +40,15 @@
             this.labelFechaNac = new System.Windows.Forms.Label();
             this.dateTimePickerFechaNac = new System.Windows.Forms.DateTimePicker();
             this.comboBoxUsusario = new System.Windows.Forms.ComboBox();
+            this.userTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.poncheMasterDataSet = new PoncheMaster.PoncheMasterDataSet();
             this.labelUser = new System.Windows.Forms.Label();
             this.labelDepartamento = new System.Windows.Forms.Label();
             this.comboBoxDepartamento = new System.Windows.Forms.ComboBox();
+            this.departamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelPosicion = new System.Windows.Forms.Label();
             this.comboBoxPosicion = new System.Windows.Forms.ComboBox();
+            this.employeePositionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -51,6 +56,13 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxCedula = new System.Windows.Forms.PictureBox();
+            this.departamentoTableAdapter = new PoncheMaster.PoncheMasterDataSetTableAdapters.DepartamentoTableAdapter();
+            this.userTableTableAdapter = new PoncheMaster.PoncheMasterDataSetTableAdapters.UserTableTableAdapter();
+            this.employeePositionTableAdapter = new PoncheMaster.PoncheMasterDataSetTableAdapters.EmployeePositionTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.userTableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poncheMasterDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departamentoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeePositionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -70,6 +82,7 @@
             this.buttonCancel.TabIndex = 11;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // ButtonCrear
             // 
@@ -80,6 +93,7 @@
             this.ButtonCrear.TabIndex = 12;
             this.ButtonCrear.Text = "Create";
             this.ButtonCrear.UseVisualStyleBackColor = true;
+            this.ButtonCrear.Click += new System.EventHandler(this.ButtonCrear_Click);
             // 
             // LabelCedula
             // 
@@ -155,12 +169,25 @@
             // 
             // comboBoxUsusario
             // 
+            this.comboBoxUsusario.DataSource = this.userTableBindingSource;
+            this.comboBoxUsusario.DisplayMember = "Username";
             this.comboBoxUsusario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxUsusario.FormattingEnabled = true;
             this.comboBoxUsusario.Location = new System.Drawing.Point(162, 140);
             this.comboBoxUsusario.Name = "comboBoxUsusario";
             this.comboBoxUsusario.Size = new System.Drawing.Size(229, 28);
             this.comboBoxUsusario.TabIndex = 14;
+            this.comboBoxUsusario.ValueMember = "IDUser";
+            // 
+            // userTableBindingSource
+            // 
+            this.userTableBindingSource.DataMember = "UserTable";
+            this.userTableBindingSource.DataSource = this.poncheMasterDataSet;
+            // 
+            // poncheMasterDataSet
+            // 
+            this.poncheMasterDataSet.DataSetName = "PoncheMasterDataSet";
+            this.poncheMasterDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // labelUser
             // 
@@ -184,12 +211,20 @@
             // 
             // comboBoxDepartamento
             // 
+            this.comboBoxDepartamento.DataSource = this.departamentoBindingSource;
+            this.comboBoxDepartamento.DisplayMember = "DeptName";
             this.comboBoxDepartamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxDepartamento.FormattingEnabled = true;
             this.comboBoxDepartamento.Location = new System.Drawing.Point(162, 174);
             this.comboBoxDepartamento.Name = "comboBoxDepartamento";
             this.comboBoxDepartamento.Size = new System.Drawing.Size(229, 28);
             this.comboBoxDepartamento.TabIndex = 14;
+            this.comboBoxDepartamento.ValueMember = "IDDept";
+            // 
+            // departamentoBindingSource
+            // 
+            this.departamentoBindingSource.DataMember = "Departamento";
+            this.departamentoBindingSource.DataSource = this.poncheMasterDataSet;
             // 
             // labelPosicion
             // 
@@ -203,12 +238,20 @@
             // 
             // comboBoxPosicion
             // 
+            this.comboBoxPosicion.DataSource = this.employeePositionBindingSource;
+            this.comboBoxPosicion.DisplayMember = "Position";
             this.comboBoxPosicion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxPosicion.FormattingEnabled = true;
             this.comboBoxPosicion.Location = new System.Drawing.Point(162, 208);
             this.comboBoxPosicion.Name = "comboBoxPosicion";
             this.comboBoxPosicion.Size = new System.Drawing.Size(229, 28);
             this.comboBoxPosicion.TabIndex = 14;
+            this.comboBoxPosicion.ValueMember = "IDPosition";
+            // 
+            // employeePositionBindingSource
+            // 
+            this.employeePositionBindingSource.DataMember = "EmployeePosition";
+            this.employeePositionBindingSource.DataSource = this.poncheMasterDataSet;
             // 
             // pictureBox6
             // 
@@ -280,6 +323,18 @@
             this.pictureBoxCedula.TabIndex = 10;
             this.pictureBoxCedula.TabStop = false;
             // 
+            // departamentoTableAdapter
+            // 
+            this.departamentoTableAdapter.ClearBeforeFill = true;
+            // 
+            // userTableTableAdapter
+            // 
+            this.userTableTableAdapter.ClearBeforeFill = true;
+            // 
+            // employeePositionTableAdapter
+            // 
+            this.employeePositionTableAdapter.ClearBeforeFill = true;
+            // 
             // FormCreateEm
             // 
             this.AcceptButton = this.ButtonCrear;
@@ -314,6 +369,11 @@
             this.MinimumSize = new System.Drawing.Size(435, 345);
             this.Name = "FormCreateEm";
             this.Text = "Create Employee";
+            this.Load += new System.EventHandler(this.FormCreateEm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.userTableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poncheMasterDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departamentoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeePositionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -351,5 +411,12 @@
         private System.Windows.Forms.Label labelPosicion;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.ComboBox comboBoxPosicion;
+        private PoncheMasterDataSet poncheMasterDataSet;
+        private System.Windows.Forms.BindingSource departamentoBindingSource;
+        private PoncheMasterDataSetTableAdapters.DepartamentoTableAdapter departamentoTableAdapter;
+        private System.Windows.Forms.BindingSource userTableBindingSource;
+        private PoncheMasterDataSetTableAdapters.UserTableTableAdapter userTableTableAdapter;
+        private System.Windows.Forms.BindingSource employeePositionBindingSource;
+        private PoncheMasterDataSetTableAdapters.EmployeePositionTableAdapter employeePositionTableAdapter;
     }
 }
